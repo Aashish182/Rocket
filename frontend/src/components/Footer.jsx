@@ -16,7 +16,7 @@ const Footer = () => {
           </div>
           <div className="mt-3">
             <p className="text-lg">+91-9930089196</p>
-            <p className="text-lg">help@CharitEase.com</p>
+            <p className="text-lg">help@ROC8.com</p>
             <p className="text-lg">APSIT, Kasarvadvali, Thane(W), India</p>
           </div>
         </div>

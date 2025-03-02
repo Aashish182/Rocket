@@ -1,33 +1,50 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Navbar from '../components/Navbar';
 import { Link } from 'react-router-dom'
 import Footer from '../components/Footer';
+import home1 from "../asset/Images/home2.jpg";
 
 const Home = () => {
   const [activeIndex, setActiveIndex] = useState(null);
+const [animate, setAnimate] = useState(false);
 
+useEffect(() => {
+  const interval = setInterval(() => {
+    setAnimate(false); 
+    setTimeout(() => setAnimate(true), 100); 
+  }, 5000); 
+
+  return () => clearInterval(interval);
+}, []);
   const toggleFAQ = (index) => {
     setActiveIndex(activeIndex === index ? null : index);
   };
   return (
     <div className="font-sans text-gray-800 bg-gradient-to-br from-white via-purple-100 to-purple-200 min-h-screen">
-
-
-        <div className="bg-gradient-to-b from-deep-purple-600 to-purple-500 text-center py-20 text-white border-b border-gray-300">
-          <h1 className="text-5xl font-bold mb-4">Welcome to Salary Predictor</h1>
-          <p className="text-lg">Use our AI-powered tool to predict your salary based on experience and skills.</p>
+        <div className="relative h-[725px] w-[1520px] bg-gradient-to-b from-deep-purple-600 to-purple-500 text-center py-20 text-white border-b border-gray-300">
+          <div 
+            className="absolute inset-0 bg-no-repeat bg-cover bg-center "
+            style={{
+              backgroundImage: `url(${home1})`,
+              opacity:"0.5",
+            }}
+          ></div>
         </div>
-
-        {/* New Content Sections */}
+          <div className="z-50 transform -translate-y-[500px] text-center">
+          <h1 className={`text-7xl text-purple-500 mb-4 transition-transform duration-700 ${animate ? 'animate-train' : 'opacity-0'}`}>
+            Welcome to ROC8
+          </h1>
+          <div className="w-40 h-1 bg-purple-400 -mt-2 mx-auto"></div>
+          <h4 className='text-lg text-purple-400'>Boost your career by predicting salary and get more things.</h4>
+          <h4 className="text-lg text-purple-400">Use our AI-powered tool to predict your salary based on experience and skills.</h4>
+          </div>
         <div className="container mx-auto py-16 px-8">
           <div className="grid grid-cols-1 gap-16">
-            {/* About Us Section */}
             <section className="bg-lavender p-8 rounded-2xl shadow-xl hover:shadow-2xl transition-transform hover:translate-y-[-5px]">
               <h2 className="text-3xl text-deep-purple-800 mb-4">About Us</h2>
               <p className="text-gray-700 leading-relaxed">ROC8 Salary Predictor is dedicated to helping individuals understand their worth in the job market. Our AI-powered tool analyzes various factors to provide accurate salary predictions.</p>
             </section>
 
-            {/* How It Works Section (Updated with Box Format) */}
             <section className="bg-lavender p-8 rounded-2xl shadow-xl hover:shadow-2xl transition-transform hover:translate-y-[-5px]">
               <h2 className="text-3xl text-deep-purple-800 mb-4">How It Works</h2>
               <div className="mt-8 flex justify-between flex-wrap">
@@ -46,14 +63,12 @@ const Home = () => {
               </div>
             </section>
 
-            {/* Testimonials Section */}
             <section className="bg-lavender p-8 rounded-2xl shadow-xl hover:shadow-2xl transition-transform hover:translate-y-[-5px]">
               <h2 className="text-3xl text-deep-purple-800 mb-4">What Our Users Say</h2>
               <blockquote className="text-gray-700 italic">"This tool helped me negotiate my salary effectively!" - Jane D.</blockquote>
               <blockquote className="text-gray-700 italic mt-4">"I was amazed at how accurate the predictions were!" - John S.</blockquote>
             </section>
 
-            {/* FAQs Section */}
             <section className="bg-purple-50 p-8 rounded-xl shadow-xl">
               <h2 className="text-3xl text-deep-purple-800 mb-4">Frequently Asked Questions</h2>
               <div className="mb-4">
@@ -65,7 +80,7 @@ const Home = () => {
                   <span className="text-purple-600">{activeIndex === 0 ? '-' : '+'}</span>
                 </h3>
                 {activeIndex === 0 && (
-                  <p className="text-gray-600 mt-2">Your privacy is our priority. We do not store personal data.</p>
+                  <p className="text-gray-600 mt-2 ml-2"> Your privacy is our priority. We do not store personal data.</p>
                 )}
               </div>
               <div>
@@ -77,7 +92,7 @@ const Home = () => {
                   <span className="text-purple-600">{activeIndex === 1 ? '-' : '+'}</span>
                 </h3>
                 {activeIndex === 1 && (
-                  <p className="text-gray-600 mt-2">Our predictions are based on extensive industry data and trends.</p>
+                  <p className="text-gray-600 mt-2 ml-2"> Our predictions are based on extensive industry data and trends.</p>
                 )}
               </div>
             </section>
@@ -93,7 +108,27 @@ const Home = () => {
         </div>
 
         <Footer />
-      
+        <style>
+        {`
+          @keyframes trainMove {
+            0% {
+              opacity: 0;
+              transform: translateX(-50px);
+            }
+            50% {
+              opacity: 1;
+              transform: translateX(0);
+            }
+            100% {
+              opacity: 0;
+              transform: translateX(50px);
+            }
+          }
+          .animate-train {
+            animation: trainMove 3s ease-in-out infinite;
+          }
+        `}
+      </style>
       
 
     </div>

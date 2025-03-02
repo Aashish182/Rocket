@@ -9,6 +9,7 @@ import Context from './context';
 import { useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import { fetchUserDetails } from './store/userSlice';
+import Blog from './pages/Blog';
 
 function App() {
   const dispatch = useDispatch();
@@ -51,6 +52,15 @@ function App() {
         <>
           <Navbar />
           <Register />
+        </>
+      ),
+    },
+    {
+      path: '/Blog',
+      element: (
+        <>
+          <Navbar />
+          <Blog />
         </>
       ),
     },

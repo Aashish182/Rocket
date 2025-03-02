@@ -13,9 +13,14 @@ const SummaryApi = {
     current_user :{
         url: `${backendDomain}/api/user-details`,
         method : "get"
-    },logout_user :{
+    },
+    logout_user :{
         url: `${backendDomain}/api/userLogout`,
         method : "get"
+    },
+    createBlog :{
+        url: `${backendDomain}/api/create-blog`,
+        method : "post"
     }
 }
 
