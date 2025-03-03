@@ -119,8 +119,8 @@ export default function Blog() {
 
     return (
         <div className="bg-purple-300 mt-0">
-            <div className="absolute inset-0 h-full bg-[radial-gradient(white_2px,transparent_2px)] bg-[size:12px_12px] opacity-30"></div>
-            <div className="max-w-5xl mx-auto p-6 mt-14">
+            <div className="absolute min-h-96 inset-0 h-full bg-[radial-gradient(white_2px,transparent_2px)] bg-[size:12px_12px] opacity-30"></div>
+            <div className="max-w-5xl mx-auto p-6 mt-14 z-1000">
                 <h1 className="text-3xl text-center mb-6 text-white">Latest Blogs on Salary Prediction</h1>
 
                 {/* Blog List Section */}
@@ -146,7 +146,7 @@ export default function Blog() {
                 </div>
 
                 {/* Blog Submission Form */}
-                <div className="mt-8 p-6 border rounded-lg shadow-md bg-white">
+                <div className="mt-8 p-6 border rounded-lg shadow-md bg-white z-50">
                     <h2 className="text-xl mb-4 flex items-center text-purple-600">
                         <FaRegEdit className="mr-2" /> Submit Your Blog
                     </h2>

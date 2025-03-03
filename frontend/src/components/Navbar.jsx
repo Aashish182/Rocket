@@ -59,7 +59,7 @@ const Navbar = () => {
                   Home
                 </NavLink>
                 <NavLink
-                  to="/About"
+                  to="/Aboutus"
                   className={({ isActive }) =>
                     isActive
                       ? "text-purple-700 bg-[#e9d5ff] px-3 py-2 rounded-md text-xl font-medium"
