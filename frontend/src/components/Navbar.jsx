@@ -4,7 +4,7 @@ import { NavLink, useNavigate } from 'react-router-dom';
 import SummaryApi from '../common';
 import { toast } from 'react-toastify';
 import { setUserDetails } from '../store/userSlice';
-import logo from '../asset/Images/logo.png';
+import logo from '../asset/Images/logo2.png';
 import { FaRegUserCircle } from "react-icons/fa";
 
 const Navbar = () => {
