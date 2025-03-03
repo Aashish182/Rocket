@@ -21,7 +21,15 @@ const SummaryApi = {
     createBlog :{
         url: `${backendDomain}/api/create-blog`,
         method : "post"
-    }
+    },
+    bloguser :{
+        url: `${backendDomain}/api/blog-user`,
+        method : "get"
+    },
+    blogDetails :{
+        url: `${backendDomain}/api/blogdetails`,
+        method : "get"
+    },
 }
 
 

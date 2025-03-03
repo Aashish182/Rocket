@@ -8,12 +8,16 @@ const userDetailsController = require('../controller/userDetails');
 const authToken = require('../middleware/authToken');
 const userLogout = require('../controller/userLogout');
 const createBlog = require('../controller/createBlog');
+const blogDetailsController = require('../controller/blogDetails');
+const blogUser = require('../controller/blogUser');
 
 router.post("/Register",userRegisterController);
 router.post("/Login",userLoginController);
 router.get("/user-details",authToken,userDetailsController);
 router.get("/userLogout",userLogout);
 router.post("/create-blog",createBlog);
+router.get("/blogdetails",blogDetailsController);
+router.get("/blog-user",blogUser);
 
 
 

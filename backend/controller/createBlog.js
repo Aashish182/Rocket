@@ -24,9 +24,6 @@ async function createBlog(req,res) {
         if(!image){
             throw new Error("Please Provide image")
         }
-        if(!creatorName){
-            throw new Error("Please Provide creatorName")
-        }
         if(!creator){
             throw new Error("Please Provide creator")
         }

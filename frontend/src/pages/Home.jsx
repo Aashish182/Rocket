@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import Navbar from '../components/Navbar';
 import { Link } from 'react-router-dom'
 import Footer from '../components/Footer';
-import home1 from "../asset/Images/home2.jpg";
+import home1 from "../asset/Images/home3.jpg";
 
 const Home = () => {
   const [activeIndex, setActiveIndex] = useState(null);
@@ -12,7 +12,7 @@ useEffect(() => {
   const interval = setInterval(() => {
     setAnimate(false); 
     setTimeout(() => setAnimate(true), 100); 
-  }, 5000); 
+  }, 3000); 
 
   return () => clearInterval(interval);
 }, []);
