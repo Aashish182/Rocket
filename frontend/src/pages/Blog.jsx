@@ -55,8 +55,8 @@ export default function Blog() {
     
         if (dataApi.success) {
             toast.success(dataApi?.message);
-            setFormData({ title: "", image: "", content: "", creator: user?._id }); // Clear the form
-            fetchBlogDetails(); // Fetch updated blog list
+            setFormData({ title: "", image: "", content: "", creator: user?._id }); 
+            fetchBlogDetails(); 
         } else {
             toast.error(dataApi?.message);
         }
@@ -134,7 +134,9 @@ export default function Blog() {
                                         <img src={el.image} alt={el.title} className="w-16 h-16 rounded" />
                                         <h2 className="text-lg font-semibold text-gray-800">{el.title}</h2>
                                     </div>
-                                    {expandedIndex === index && <p className="mt-2 text-gray-600">{el.content}</p>}
+                                    {expandedIndex === index && (
+                                        <p className="mt-2 text-gray-600">{el.content}</p>
+                                    )}
                                 </div>
                             ))
                         ) : (

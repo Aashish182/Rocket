@@ -100,7 +100,7 @@ const Navbar = () => {
                       <span>{user?.name}</span>
                       <FaRegUserCircle />
                     </div>
-                    {(isHovered || menuVisible) && (
+                    {(isHovered) && (
                       <div className="absolute right-0 mt-0 w-32 bg-white shadow-lg rounded-md z-50">
                         <div className="relative">
                           {/* Triangle Indicator */}
