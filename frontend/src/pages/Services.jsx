@@ -1,11 +1,9 @@
 import React from 'react';
-import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 
 const Services = () => {
   return (
     <div className="min-h-screen bg-gray-100">
-      <Navbar />
       <div className="container mx-auto py-16 px-8">
         <h1 className="text-4xl text-purple-800 font-bold text-center">Our Services</h1>
         <div className="grid md:grid-cols-2 gap-8 mt-8">

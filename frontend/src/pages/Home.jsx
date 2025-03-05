@@ -6,13 +6,14 @@ import home1 from "../asset/Images/home3.jpg";
 
 const Home = () => {
   const [activeIndex, setActiveIndex] = useState(null);
-const [animate, setAnimate] = useState(false);
+
+const [animate, setAnimate] = useState(true); 
 
 useEffect(() => {
   const interval = setInterval(() => {
-    setAnimate(false); 
-    setTimeout(() => setAnimate(true), 100); 
-  }, 3000); 
+    setAnimate(false);
+    setTimeout(() => setAnimate(true), 100);
+  }, 3000);
 
   return () => clearInterval(interval);
 }, []);

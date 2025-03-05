@@ -22,10 +22,10 @@ const Footer = () => {
         </div>
         <div className='space-y-20'>
         <div className="flex flex-wrap justify-center md:justify-start space-x-6 mb-7 md:mb-0">
-          <NavLink className='text-2xl hover:text-gray-300 transition' to='/Works'>How it works</NavLink>
-          <NavLink className='text-2xl hover:text-gray-300 transition' to='/Contact'>Why ROC8</NavLink>
-          <NavLink className='text-2xl hover:text-gray-300 transition' to='/Fraq'>Common Questions</NavLink>
-          <NavLink className='text-2xl hover:text-gray-300 transition' to='/Contact'>Help Center</NavLink>
+          <NavLink className='text-2xl hover:text-gray-300 transition' to='/Home'>How it works</NavLink>
+          <NavLink className='text-2xl hover:text-gray-300 transition' to='/Aboutus'>Why ROC8</NavLink>
+          <NavLink className='text-2xl hover:text-gray-300 transition' to='/Home'>Common Questions</NavLink>
+          <NavLink className='text-2xl hover:text-gray-300 transition' to='/Aboutus'>Help Center</NavLink>
           <NavLink className='text-2xl hover:text-gray-300 transition' to='/Blog'>Blog</NavLink>
         </div>
         <div className='flex text-center justify-end'>

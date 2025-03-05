@@ -5,6 +5,7 @@ import SummaryApi from '../common';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import Footer from '../components/Footer';
+import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
 
 export default function Blog() {
     const [blogs, setBlogs] = useState([]);
@@ -118,8 +119,10 @@ export default function Blog() {
     }, []);
 
     return (
-        <div className="bg-purple-300 mt-0">
-            <div className="absolute min-h-96 inset-0 h-full bg-[radial-gradient(white_2px,transparent_2px)] bg-[size:12px_12px] opacity-30"></div>
+        <div className="bg-purple-300 mt-0 ">
+            {/* <div className="absolute min-h-64 -z-{1000} inset-0 bg-[radial-gradient(white_2px,transparent_2px)] bg-[size:12px_12px] opacity-30"></div> */}
+            <div className="absolute inset-0 bg-[radial-gradient(white_2px,transparent_2px)] bg-[size:12px_12px] opacity-30 z-[-1]"></div>
+
             <div className="max-w-5xl mx-auto p-6 mt-14 z-1000">
                 <h1 className="text-3xl text-center mb-6 text-white">Latest Blogs on Salary Prediction</h1>
 
@@ -130,10 +133,16 @@ export default function Blog() {
                         {Array.isArray(data) && data.length > 0 ? (
                             data.map((el, index) => (
                                 <div key={index} className="p-4 border rounded-lg shadow-md bg-white hover:shadow-lg transition">
-                                    <div className="flex items-center space-x-4 cursor-pointer" onClick={() => setExpandedIndex(expandedIndex === index ? null : index)}>
+                                    <div
+                                        className="flex items-center space-x-4 cursor-pointer"
+                                        onClick={() => setExpandedIndex(expandedIndex === index ? null : index)}
+                                        >
                                         <img src={el.image} alt={el.title} className="w-16 h-16 rounded" />
-                                        <h2 className="text-lg font-semibold text-gray-800">{el.title}</h2>
-                                    </div>
+                                        <h2 className="text-lg font-semibold text-gray-800 flex-1">{el.title}</h2>
+                                        <span className="text-gray-500 text-xl">
+                                            {expandedIndex === index ? <IoIosArrowUp size={25} /> : <IoIosArrowDown size={25} />}
+                                        </span>
+                                        </div>
                                     {expandedIndex === index && (
                                         <p className="mt-2 text-gray-600">{el.content}</p>
                                     )}
